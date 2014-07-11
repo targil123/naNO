@@ -10,7 +10,10 @@
       </ul>
     </div>
   <% end %>
-
+  <% Post.texts.each do |text,_| %>
+    <%= f.radio_button :text,text%>
+    <%= f.label "text_#{text}",text %>
+  <% end%>
   <div class="actions">
     <%= f.submit %>
   </div>
