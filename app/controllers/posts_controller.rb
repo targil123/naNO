@@ -3,7 +3,7 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new
-    @post = Post.new
+    @post = Post.new text: 0
     @posts = Post.all
   end
 
