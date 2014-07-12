@@ -21,6 +21,8 @@
 
 en:
   title:
-    posts: 
+    posts:
+      create: Create Post Error
       edit: Edit Post
       new: New Post
+      update: Update Post Error
