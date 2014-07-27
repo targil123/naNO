@@ -10,11 +10,15 @@
       </ul>
     </div>
   <% end %>
+  <div class="btn-group" data-toggle="buttons">
   <% Post.texts.each do |text,_| %>
-    <%= f.radio_button :text,text%>
-    <%= f.label "text_#{text}",text %>
+    <label class="btn btn-default <%= 'active' if f.object.text == text %>">
+      <%= text %>
+      <%= f.radio_button :text,text %>
+    </label>
   <% end%>
+  </div>
   <div class="actions">
-    <%= f.submit "Go!", class: 'btn btn-default' %>
+    <%= f.submit "Go!", class: 'btn btn-black' %>
   </div>
 <% end %>
