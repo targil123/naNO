@@ -2,6 +2,16 @@
 	<div class="col-sm-offset-3 col-sm-9 long-container">
 		<h2><%= heading %></h2>
 		<%= render 'form' %>
+		<%if @post.persisted?%> 
+			<%= button_to @post,form_class:"inline-icon",method: :delete,class: "btn btn-black" do %>
+				<span class="glyphicon glyphicon-trash"> </span>
+				<span class="sr-only">Delete</span>
+			<% end %>
+			<%= link_to root_path, class: 'btn btn-black inline-icon' do %>
+				<span class="glyphicon glyphicon-home"> </span>
+				<span class="sr-only">Back home</span>
+			<% end %>
+		<% end %>
 	</div>
 </div>
 <div class="feed pull-left">

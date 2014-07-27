@@ -12,7 +12,7 @@
   <% end %>
   <div class="btn-group" data-toggle="buttons">
   <% Post.texts.each do |text,_| %>
-    <label class="btn btn-default <%= 'active' if f.object.text == text %>">
+    <label class="post-text btn btn-default <%= 'active' if f.object.text == text %>">
       <%= text %>
       <%= f.radio_button :text,text %>
     </label>
