@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :users
+
   resources :posts,only: [:create,:update,:destroy,:edit]
 
   # The priority is based upon order of creation: first created -> highest priority.
