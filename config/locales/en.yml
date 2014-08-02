@@ -30,3 +30,7 @@ en:
       create: Sign Up Error
       new: Sign Up
       show: Yo
+    session:
+      new: Sign In
+      create: Sign In Error
+

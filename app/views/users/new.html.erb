@@ -1,14 +1,6 @@
+<h2>Sign Up</h2>
 <%= form_for @user do |f|%>
-	<% if @user.errors.present? %>
-	<p>There are problems with the following fields:</p>
-	<ul>
-		<% @user.errors.full_messages.each do|message| %>
-			<li> 
-				<%= message %>
-			</li>
-		<% end %>
-	</ul>
-	<%end%>
+	<%= render "shared/error_messages", object:@user %>
 	<%= f.label :email %> 
 	<%= f.email_field :email %>
 	<%= f.label :password %> 
