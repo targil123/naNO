@@ -13,7 +13,8 @@
 	<header class="container" role="banner">
 		<div class="row">
 			<div class="col-sm-4 short-container">
-				<h1><%= link_to 'naNO', root_path %></h1>
+				<h1> <%= link_to 'naNO', current_user || root_path %>
+				</h1>
 			</div>
 		</div>
 	</header>
