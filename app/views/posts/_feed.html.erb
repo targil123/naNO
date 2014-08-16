@@ -1,11 +1,6 @@
-<div class="table-responsive">
-	<table class="table">
-	  <tbody>
-	    <% @posts.each do |post| %>
-	      <tr>
-	        <td class="post-text"><%= link_to post.text,edit_post_path(post) %></td>
-	      </tr>
-	    <% end %>
-	  </tbody>
-	</table>
-</div>
+<ul class = "list-group">
+	<% posts.each do |post| %>
+	   <li class="post-text list-group-item"><%= link_to_if post.user==current_user, post.text,edit_post_path(post) %></li>
+	<% end %>
+
+</ul>

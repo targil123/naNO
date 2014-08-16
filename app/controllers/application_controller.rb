@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   helper_method :current_user
+  attr_writer :current_user
   def current_user
 	@current_user ||= begin
 		remember_token = User.digest(cookies[:remember_token])

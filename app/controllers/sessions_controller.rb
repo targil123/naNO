@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
   def create
   	user = User.find_by(email: params[:session][:email].downcase)
 	if user && user.authenticate(params[:session][:password])
-		remember_token=SecureRandom.urlsafe_base64
+		remember_token=User.new_remember_token
 		cookies[:remember_token] = remember_token
 		user.update! remember_token: User.digest(remember_token)
 		redirect_to user
@@ -17,5 +17,9 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+	current_user.update_attribute(:remember_token, User.digest(User.new_remember_token))
+    	cookies.delete(:remember_token)
+    	self.current_user = nil
+	redirect_to root_path
   end
 end

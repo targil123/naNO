@@ -16,6 +16,14 @@
 				<h1> <%= link_to 'naNO', current_user || root_path %>
 				</h1>
 			</div>
+			<div class="col-sm-8">
+				<% if current_user%>
+					<%= button_to 'Sign Out', session_path, method: :delete, class: "btn-link pull-right"%>
+				<% elsif !(current_page? root_path)%>
+					<%=link_to 'Sign In', root_path, class: "pull-right"%>
+				<%end%>
+
+			</div>
 		</div>
 	</header>
 

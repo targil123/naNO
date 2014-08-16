@@ -1,1 +1,4 @@
 <%= render 'change', heading: 'Changes, yo?' %>
+<div class="pull-right feed"> 
+	<%=render 'posts/feed', posts:current_user.posts%>
+</div>
