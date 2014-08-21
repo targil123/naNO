@@ -1,9 +1,9 @@
 <h2>Sign In</h2>
-<%= form_for :session, url: "/session" do |f|%>
+<%= form_for :session, url: session_path do |f|%>
 	<%= f.label :email%>
 	<%= f.email_field :email%>
 	<%= f.label :password%>
 	<%= f.password_field :password%>
 	<%= f.submit "Sign In"%>
 <%end%>
-<p> Oh, no account?! <%=link_to "Sign up here.", new_user_path %> </p>
+<p> No account?! <%=link_to "Sign up here.", new_user_path %> </p>

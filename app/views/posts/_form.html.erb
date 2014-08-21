@@ -1,5 +1,5 @@
 <%= form_for(@post) do |f| %>
-  <%= render "shared/error_messages", object:@post %>
+  <%= render "shared/error_messages", object: @post %>
   <div class="btn-group" data-toggle="buttons">
   <% Post.texts.each do |text,_| %>
     <label class="post-text btn btn-default <%= 'active' if f.object.text == text %>">
