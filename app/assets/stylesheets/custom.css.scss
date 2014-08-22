@@ -65,3 +65,6 @@ h2{
 .actions {
 	margin-top: 25px;
 }
+.alert-error{
+	@extend .alert-danger;
+}
