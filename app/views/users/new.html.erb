@@ -1,11 +1,17 @@
 <h2>Sign Up</h2>
-<%= form_for @user do |f|%>
+<%= form_for @user, html:{role:"form"} do |f|%>
 	<%= render "shared/error_messages", object: @user %>
-	<%= f.label :email %> 
-	<%= f.email_field :email %>
-	<%= f.label :password %> 
-	<%= f.password_field :password %>
-	<%= f.label :password_confirmation %> 
-	<%= f.password_field :password_confirmation %>
-	<%= f.submit "Sign up!" %>
+	<div class="form-group">
+		<%= f.label :email, class: "control-label" %> 
+		<%= f.email_field :email, class: "form-control"  %>
+	</div>
+	<div class="form-group" >
+		<%= f.label :password, class: "control-label"%> 
+		<%= f.password_field :password, class: "form-control" %>
+	</div>
+	<div class="form-group">
+		<%= f.label :password_confirmation, class: "control-label"%> 
+		<%= f.password_field :password_confirmation, class: "form-control"  %>
+	</div>
+	<%= f.submit "Sign up!", class: "btn btn-black"%>
 <%end%>
