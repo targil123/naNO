@@ -17,7 +17,9 @@ class UsersController < ApplicationController
 		params.require(:user).permit :email, :username, :password, :password_confirmation	
 	end
 	def show
+		user = User.find params[:id]
 		@post = Post.new
-		@posts = Post.all	
+		@posts = user.posts
+		@label = user	
 	end
 end

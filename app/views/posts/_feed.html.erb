@@ -1,6 +1,10 @@
 <ul class = "list-group">
 	<% posts.each do |post| %>
-	   <li class="post-text list-group-item"><%= link_to_if post.user==current_user, post.text,edit_post_path(post) %></li>
+	   <li class="post-text list-group-item">
+	   	<span class = "meta-data"><%= link_to post.user.username, post.user %></span>
+	   	<%= link_to_if post.user==current_user, post.text,edit_post_path(post) %>
+
+	   </li>
 	<% end %>
 
 </ul>

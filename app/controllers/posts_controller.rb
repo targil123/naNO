@@ -1,15 +1,10 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:edit, :update, :destroy]
   before_action :signed_in_only, only: [:edit, :create, :update, :destroy]
-  # GET /posts/new
-  def new
-    @post = Post.new
-    @posts = Post.all
-  end
-
+  
   # GET /posts/1/edit
   def edit
-    @posts = Post.all
+    @posts = current_user.posts
   end
 
   # POST /posts

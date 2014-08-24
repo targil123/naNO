@@ -42,11 +42,15 @@
 		</div>
 		<%if current_user%>
 			<div class="feed pull-left">
-				<%= render 'posts/feed',posts:@posts %>
+				<h3 >All Posts </h3>
+				<%= render 'posts/feed',posts:Post.all %>
 			</div>
-			<div class="pull-right feed"> 
-				<%=render 'posts/feed', posts:current_user.posts%>
-			</div>
+			<% if @posts.present? %>
+				<div class="pull-right feed"> 
+					<h3><%= @posts.first.user.username %></h3>
+					<%= render 'posts/feed', posts: @posts %>
+				</div>
+			<% end %>
 		<%end%>
 	</main>
 </body>
