@@ -4,14 +4,14 @@ class SessionsController < ApplicationController
   before_action :signed_out_only, only:[:new,:create]
   before_action :signed_in_only, only: :destroy
   def create
-  	user = User.find_by(email: params[:session][:email].downcase)
+  	user = User.find_by(username: params[:session][:username])
 	if user && user.authenticate(params[:session][:password])
 		remember_token=User.new_remember_token
 		cookies[:remember_token] = remember_token
 		user.update! remember_token: User.digest(remember_token)
 		redirect_to user
 	else 
-		flash.now[:error]= 'Invalid email/password combination'
+		flash.now[:error]= 'Invalid username/password combination'
 		render :new
 	end
   end
